@@ -23,6 +23,6 @@ Future / Final Intended Functionality:
 
 Potential / Non-Prioritized Functionality:
 - Allow user to purchase books:
- - Permanently removes a book from the library interface
- - Provides reciept of book purchase
+    - Permanently removes a book from the library interface
+    - Provides reciept of book purchase
 - More in-depth late fee calculations
