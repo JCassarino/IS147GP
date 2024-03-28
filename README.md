@@ -1,5 +1,5 @@
-Library Directory Program
-    - Contains information on 5 popular books across the 5 most popular genres, totaling 25 books. 
+Library Directory Program;
+    - Contains information on 5 popular books across the 5 most popular genres, totaling 25 books;
     - Code has been made scalable, so 25 is not the limit, it can cover as many books as a user is willing to input full information for.
     - Current functionality:
     - Allows user to browse books by genre
