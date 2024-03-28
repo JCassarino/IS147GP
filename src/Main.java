@@ -84,6 +84,7 @@ books[i] = new Book(
         System.out.println("Welcome to the IS147 Library Directory!");
         System.out.println();
 
+    // Prompting user to choose a genre of book to browse. Uses a loop to allow for repeating message if user chooses invalid options
 while (selectedGenre == null) {
     System.out.println("Please select the genre of book you would like to look at:");
     for (int i = 0; i < genres.length; i++){
@@ -91,26 +92,16 @@ while (selectedGenre == null) {
     }
     int genreChoice = in.nextInt();
 
-
     if (genreChoice >= 1 && genreChoice <= genres.length){
         selectedGenre = genres[genreChoice-1];} // Valid choice, declares selectedGenre as a valid int, breaking the loop to continue the program
 
     else {System.out.println("Invalid choice. Please try again.");} // Invalid choice, runs loop again
 }
-
+    // Shows books in the genre selected by the user. Utilises the printBook function present in the book class
             System.out.println("Books in the " +selectedGenre+ " genre: ");
             System.out.println();
-
-            for(Book book : books){
-                if(genres[book.genreIndex].equals(selectedGenre)){
-                    System.out.println("Title: " + book.title);
-                    System.out.println("Author: " + book.author);
-                    System.out.println("Date Published: " + book.pubDate);
-                    System.out.println("Price: $" + book.price);
-                    System.out.println("Page Count: " + book.pageNum);
-                    System.out.println();
-
-                }
+            for( Book book : books){
+                if(genres[book.genreIndex].equals(selectedGenre)){book.printBook();}
             }
 
     }
