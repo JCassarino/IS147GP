@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -34,8 +33,6 @@ public class Main {
             19.59, 15.15, 20.99, 18.80, 13.56,
             10.48, 8.99, 8.88, 10.94, 16.55,
             8.64, 5.99, 21.00, 11.00, 7.64
-
-
     };
 
     int[] pageNums = {
@@ -44,7 +41,6 @@ public class Main {
             302, 324, 896, 255, 253,
             192, 256, 192, 368, 272,
             223, 377, 423, 694, 172
-
     };
 
     int[] genreIndices = {
@@ -56,17 +52,17 @@ public class Main {
     };
 
     String[] genres = {
-            "History (Nonfiction)", //0
-            "Historical Fiction", //1
-            "Science Fiction", //2
-            "Mystery", //3
-            "Fantasy", //4
+            "History (Nonfiction)",
+            "Historical Fiction",
+            "Science Fiction",
+            "Mystery",
+            "Fantasy",
     };
 
     // Creating an array of "book" objects and populating it with the data listed above
-Book[] books = new Book[titles.length];
-for (int i = 0; i < books.length; i++){
-books[i] = new Book(
+Book[] bookShelf = new Book[titles.length];
+for (int i = 0; i < bookShelf.length; i++){
+bookShelf[i] = new Book(
         titles[i],
         authors[i],
         pubDates[i],
@@ -74,7 +70,7 @@ books[i] = new Book(
         pageNums[i],
         genreIndices[i]);
 }
-    // Declaring scanner, allows us to prompt user to choose their genre
+    // Declaring scanner, allows us to prompt user when input is needed
         Scanner in = new Scanner(System.in);
 
     // Variable to store the selected genre, initialized as null to allow for declaration inside loop, which would then break the loop
@@ -100,7 +96,7 @@ while (selectedGenre == null) {
     // Shows books in the genre selected by the user. Utilises the printBook function present in the book class
             System.out.println("Books in the " +selectedGenre+ " genre: ");
             System.out.println();
-            for( Book book : books){
+            for( Book book : bookShelf){
                 if(genres[book.genreIndex].equals(selectedGenre)){book.printBook();}
             }
 
