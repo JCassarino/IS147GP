@@ -5,12 +5,12 @@ Library Directory Program:
     - Allows user to browse books by genre
     - Includes error messages if invalid choices are made, and prompts user to choose again.
     - Displays all relevant information on any books stored:
-                - Title
-                - Author
-                - Publishing Date
-                - Price
-                - Page Count
-                - Genre
+      - Title
+      - Author
+      - Publishing Date
+      - Price
+      - Page Count
+      - Genre
                 
 Future / Final Intended Functionality:
 - Allow user to check out books:
@@ -22,7 +22,7 @@ Future / Final Intended Functionality:
       - System will return a satisfactory message or notify the user of a late fee, calculated by the # of days a book has been checked out
 
 Potential / Non-Prioritized Functionality:
-  - Allow user to purchase books:
-                - Permanently removes a book from the library interface
-                - Provides reciept of book purchase
-  - More in-depth late fee calculations
+- Allow user to purchase books:
+ - Permanently removes a book from the library interface
+ - Provides reciept of book purchase
+- More in-depth late fee calculations
