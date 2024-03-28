@@ -48,19 +48,19 @@ public class Main {
     };
 
     int[] genreIndices = {
+            0,0,0,0,0,
             1,1,1,1,1,
             2,2,2,2,2,
             3,3,3,3,3,
             4,4,4,4,4,
-            5,5,5,5,5
     };
 
     String[] genres = {
-            "History (Nonfiction)",
-            "Historical Fiction",
-            "Science Fiction",
-            "Mystery",
-            "Fantasy",
+            "History (Nonfiction)", //0
+            "Historical Fiction", //1
+            "Science Fiction", //2
+            "Mystery", //3
+            "Fantasy", //4
     };
 
     // Creating an array of "book" objects and populating it with the data listed above
@@ -99,12 +99,14 @@ while (selectedGenre == null) {
 }
 
             System.out.println("Books in the " +selectedGenre+ " genre: ");
+            System.out.println();
+
             for(Book book : books){
                 if(genres[book.genreIndex].equals(selectedGenre)){
                     System.out.println("Title: " + book.title);
                     System.out.println("Author: " + book.author);
                     System.out.println("Date Published: " + book.pubDate);
-                    System.out.println("Price: " + book.price);
+                    System.out.println("Price: $" + book.price);
                     System.out.println("Page Count: " + book.pageNum);
                     System.out.println();
 
