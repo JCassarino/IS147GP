@@ -13,13 +13,17 @@ Library Directory Program:
       - Genre
                 
 Future / Final Intended Functionality:
+- Startup menu that users can return to
+    - Will contain options to search books by name / genre
+    - Will contain options to return a book that has been checked out previously
 - Allow user to check out books:
   - Add a new piece of book info; Checkout status
   - Will display "Available" or "Currently Checked Out"
     - Book return interface:
       - Prompts a user with a list of all currently checked out books, user will chose theirs 
       - User will enter how many days their book has been checked out
-      - System will return a satisfactory message or notify the user of a late fee, calculated by the # of days a book has been checked out
+      - System will return a satisfactory message or notify the user of a late fee, calculated by the # of days a book has been checked ou
+- Allow users to search books by name
 
 Potential / Non-Prioritized Functionality:
 - Allow user to purchase books:
