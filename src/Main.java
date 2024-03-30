@@ -46,7 +46,6 @@ public class Main {
 
             switch (mainMenuChoice) {
 
-                // Browse Books
                 case 1:
                     browseBooks(in, Book.genres, bookShelf);
                     break;
