@@ -51,22 +51,26 @@
              "Mystery",
              "Fantasy",
      };
+     static boolean[] outStatus = new boolean[titles.length];
+
     // Initializing variables for all important characteristics of a book
-     String title;
+    String title;
     String author;
     String pubDate;
     double price;
     int pageNum;
     int genreIndex;
+    boolean checkedOut;
 
     // Creating a book object to hold all relevant info in one spot
-    public Book(String title, String author, String pubDate, double price, int pageNum, int genreIndex) {
+    public Book(String title, String author, String pubDate, double price, int pageNum, int genreIndex, boolean checkedOut) {
         this.title = title;
         this.author = author;
         this.pubDate = pubDate;
         this.price = price;
         this.pageNum = pageNum;
         this.genreIndex = genreIndex;
+        this.checkedOut = checkedOut;
     }
     // Function that prints all book info. Prevents huge chunks of code being repeated each time we want to show book info
   public void printBook(){
@@ -75,7 +79,9 @@
       System.out.println("Date Published: " + pubDate);
       System.out.println("Price: $" + price);
       System.out.println("Page Count: " + pageNum);
-      System.out.println();
+      if (!checkedOut){System.out.println("Currently Available");}
+      if (checkedOut){System.out.println("Currently Checked Out");}
+      System.out.println("----------------------------------------");
 
   }
 
