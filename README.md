@@ -1,4 +1,5 @@
 Team Members: Joe Cassorino, Colin Kapfer, Ariel Agustin, Khadijah Arafat
+
 Library Directory Program:
 - Contains information on 5 popular books across the 5 most popular genres, totaling 25 books.
 - Code has been made scalable, so 25 is not the limit. It can contain as many books as a user is willing to input full information for.
