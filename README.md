@@ -32,4 +32,4 @@ Potential / Non-Prioritized Functionality:
 - More in-depth late fee calculations
 
 
-Team Members: Joe Cassorino, Colin Kapfer, Ariel Agustin, Khadijah Arafat
+Team Members: Joe Cassarino, Colin Kapfer, Ariel Agustin, Khadijah Arafat
