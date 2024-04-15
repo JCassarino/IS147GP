@@ -9,6 +9,7 @@ public class Main {
         System.out.println("----------------------------------------");
         System.out.println("Welcome to the IS147 Library Directory!");
         System.out.println("----------------------------------------");
+        System.out.println("shiva test");
 
         // Calling arrays that were populated in the book class - Arrays were populated there to prevent visual bloat in the Main
         String[] titles = Book.titles;
