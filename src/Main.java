@@ -9,7 +9,6 @@ public class Main {
         System.out.println("----------------------------------------");
         System.out.println("Welcome to the IS147 Library Directory!");
         System.out.println("----------------------------------------");
-        ;
 
         // Calling arrays that were populated in the book class - Arrays were populated there to prevent visual bloat in the Main
         String[] titles = Book.titles;
@@ -40,7 +39,8 @@ public class Main {
         while (true) {
             System.out.println("[1] - Browse / Checkout Books");
             System.out.println("[2] - Return A Book");
-            System.out.println("[3] - Exit");
+            System.out.println("[3] - Display Menu");
+            System.out.println("[4] - Exit");
             System.out.println("Please Enter Your Choice: ");
 
             int mainMenuChoice = in.nextInt();
@@ -48,12 +48,16 @@ public class Main {
             switch (mainMenuChoice) {
 
                 case 1:
-                    browseBooks(in, Book.genres, bookShelf);
+                    int booksFound = browseBooks(in, Book.genres, bookShelf);
+                    System.out.println("Total books found: " + booksFound);
                     break;
                 case 2:
                     System.out.println("Return Menu");
                     break;
                 case 3:
+                    displayMenu();
+                    break;
+                case 4:
                     System.out.println("Thank you for visiting the IS147 Library.");
                     System.out.println("Come again soon!");
                     return;
@@ -66,7 +70,7 @@ public class Main {
 
 
     // browseBooks function allows for the user to search for books by genre. This is used in the browse feature as well as the checkout feature.
-        private static void browseBooks(Scanner in, String[] genres, Book[] bookShelf){
+    private static int browseBooks(Scanner in, String[] genres, Book[] bookShelf){
 
         // Variable to store the selected genre, initialized as null to allow for declaration inside loop, which would then break the loop
         String selectedGenre = null;
@@ -87,16 +91,22 @@ public class Main {
                 System.out.println("Invalid choice. Please try again.");
             } // Invalid choice, runs loop again
         }
+
+        int booksFound = 0; // Variable to store the number of books found
+
         // Shows books in the genre selected by the user. Utilises the printBook function present in the book class
         System.out.println("Books in the " + selectedGenre + " genre: ");
-            System.out.println("----------------------------------------");
+        System.out.println("----------------------------------------");
         for (Book book : bookShelf) {
             if (genres[book.genreIndex].equals(selectedGenre)) {
                 book.printBook();
+                booksFound++; // Increment the counter for each book found
             }
         }
 
+        return booksFound; // Return the number of books found
     }
+
     public static void displayMenu() {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -139,5 +149,3 @@ public class Main {
         scanner.close();
     }
 }
-
-
