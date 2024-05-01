@@ -73,7 +73,7 @@
         this.checkedOut = checkedOut;
     }
     // Function that prints all book info. Prevents huge chunks of code being repeated each time we want to show book info
-  public void printBook(){
+  public double printBook(){
       System.out.println("Title: " + title);
       System.out.println("Author: " + author);
       System.out.println("Date Published: " + pubDate);
@@ -82,6 +82,16 @@
       if (!checkedOut){System.out.println("Currently Available");}
       if (checkedOut){System.out.println("Currently Checked Out");}
       System.out.println("----------------------------------------");
+
+    // Math Class Method. Used for calculating late fees.
+      public double calculateLateFee;(LocalDate currentDate) {
+          if (currentDate.isAfter(dueDate)) {
+              long daysLate = dueDate.until(currentDate).getDays();
+              // Utilize the calculateLateFee method from the LibraryMath class
+              return LibraryMath.calculateLateFee((int) daysLate);
+          }
+          return 0; // No late fee if not late
+      }
 
   }
 
