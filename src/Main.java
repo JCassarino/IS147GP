@@ -19,7 +19,6 @@ public class Main {
         String[] genres = Book.genres;
         boolean[] outStatus = Book.outStatus;
         int[] bookId = Book.bookIds;
-
         // Creating an array of "book" objects and populating it with the data listed above
         Book[] bookShelf = new Book[titles.length];
         for (int i = 0; i < bookShelf.length; i++) {
@@ -106,14 +105,15 @@ public class Main {
 
         return booksFound; // Return the number of books found
     }
-    static int checkoutChoice;
+
     private static void checkoutMenu(Scanner in, int[] bookId, Book[] bookShelf, boolean[] outStatus, String[] titles, String[] authors){
         System.out.println("-------------------------------------------------");
         System.out.println("Welcome to the IS147 Library Checkout Interface!");
         System.out.println("Please enter the Book ID number of the title you want to check out / return:");
-        checkoutChoice = in.nextInt();
+         int checkoutChoice = in.nextInt();
         for (int i = 0; i < bookShelf.length; i++)
-            if (checkoutChoice == bookId[i]) {outStatus[i] = !outStatus[i];
+            if (checkoutChoice == bookId[i]) {
+                outStatus[i] = !outStatus[i];
                 System.out.println("-------------------------------------------------");
                 if(outStatus[i]){System.out.println("Successfully Checked Out: ");}
                 if(!outStatus[i]){System.out.println("Successfully Returned: ");}

@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 class Book {
     static String[] titles = {"American Prometheus","The Guns of August","Orientalism","1776","An Army at Dawn",
             "The Book Thief","A Tale of Two Cities","Shōgun","All Quiet on the Western Front","War and Peace",
