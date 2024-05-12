@@ -114,6 +114,7 @@ public class Main {
         for (int i = 0; i < bookShelf.length; i++)
             if (checkoutChoice == bookId[i]) {
                 outStatus[i] = !outStatus[i];
+                bookShelf[i].setCheckedOut(outStatus[i]);
                 System.out.println("-------------------------------------------------");
                 if(outStatus[i]){System.out.println("Successfully Checked Out: ");}
                 if(!outStatus[i]){System.out.println("Successfully Returned: ");}

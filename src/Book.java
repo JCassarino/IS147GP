@@ -47,6 +47,10 @@ class Book {
 
     static boolean[] outStatus = new boolean[titles.length];
 
+    public void setCheckedOut(boolean checkedOut) {
+        this.checkedOut = checkedOut;
+    }
+
 
     String title;
     String author;
