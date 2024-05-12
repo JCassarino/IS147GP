@@ -1,4 +1,6 @@
 class Book {
+    // Entered all relevant information corresponding to 5 books from 5 different genres into arrays corresponding to the type of data
+    // These arrays are all combined to make one "book" object array in Main
     static String[] titles = {"American Prometheus","The Guns of August","Orientalism","1776","An Army at Dawn",
             "The Book Thief","A Tale of Two Cities","Shōgun","All Quiet on the Western Front","War and Peace",
             "The Three-Body Problem","Ender's Game","Dune","Foundation","I, Robot",
@@ -45,13 +47,15 @@ class Book {
             41,42,43,44,45,
             51,52,53,54,55,};
 
+    // All books are not available by default, so outStatus is false for all books on program start
     static boolean[] outStatus = new boolean[titles.length];
 
+    // Defining setter method to allow checkoutMenu method to set the outStatus of books
     public void setCheckedOut(boolean checkedOut) {
         this.checkedOut = checkedOut;
     }
 
-
+    // Initializing book related variables
     String title;
     String author;
     String pubDate;
@@ -61,7 +65,7 @@ class Book {
     boolean checkedOut;
     int bookId;
 
-
+    // Defining book object
     public Book(String title, String author, String pubDate, double price, int pageNum, int genreIndex, boolean checkedOut, int bookId) {
         this.title = title;
         this.author = author;
@@ -73,6 +77,7 @@ class Book {
         this.bookId = bookId;
     }
 
+    // printBook function prints all relevant info about a book if it is available, and displays an error message if it's currently checked out
     public void printBook(){
         if (!checkedOut){
         System.out.println("Title: " + title);
