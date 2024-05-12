@@ -16,32 +16,39 @@ class Book {
             "2008","01/1985","08/1965","1951","12/02/1950",
             "1982","01/01/1934","1887","08/14/2018","11/06/1939",
             "06/26/1997","06/01/2005","06/29/1954","08/01/1996","10/16/1950"};
-    static double[] prices = {15.15, 8.99, 12.99, 11.51, 14.69,
+    static double[] prices = {
+            15.15, 8.99, 12.99, 11.51, 14.69,
             7.83, 5.49, 22.49, 6.99, 12.49,
             19.59, 15.15, 20.99, 18.80, 13.56,
             10.48, 8.99, 8.88, 10.94, 16.55,
             8.64, 5.99, 21.00, 11.00, 7.64};
-    static int[] pageNums = {721, 551, 368, 386, 704,
+    static int[] pageNums = {
+            721, 551, 368, 386, 704,
             584, 408, 1299, 160, 1225,
             302, 324, 896, 255, 253,
             192, 256, 192, 368, 272,
             223, 377, 423, 694, 172};
-    static int[] genreIndices = {0,0,0,0,0,
+    static int[] genreIndices = {
+            0,0,0,0,0,
             1,1,1,1,1,
             2,2,2,2,2,
             3,3,3,3,3,
             4,4,4,4,4};
-    static String[] genres = {"History (Nonfiction)",
+    static String[] genres = {
+            "History (Nonfiction)",
             "Historical Fiction",
             "Science Fiction",
             "Mystery",
             "Fantasy"};
-    static boolean[] outStatus = new boolean[titles.length];
-    private static int totalBooks = 0; // Static variable to keep track of the total number of books in the library
+    static int[] bookIds = {
+            11,12,13,14,15,
+            21,22,23,24,25,
+            31,32,33,34,35,
+            41,42,43,44,45,
+            51,52,53,54,55,};
 
-    public static int getTotalBooks() { // Static method to get the total number of books in the library
-        return totalBooks;
-    }
+    static boolean[] outStatus = new boolean[titles.length];
+
 
     String title;
     String author;
@@ -50,8 +57,10 @@ class Book {
     int pageNum;
     int genreIndex;
     boolean checkedOut;
+    int bookId;
 
-    public Book(String title, String author, String pubDate, double price, int pageNum, int genreIndex, boolean checkedOut) {
+
+    public Book(String title, String author, String pubDate, double price, int pageNum, int genreIndex, boolean checkedOut, int bookId) {
         this.title = title;
         this.author = author;
         this.pubDate = pubDate;
@@ -59,25 +68,23 @@ class Book {
         this.pageNum = pageNum;
         this.genreIndex = genreIndex;
         this.checkedOut = checkedOut;
-        totalBooks++; // Increment totalBooks count
+        this.bookId = bookId;
     }
 
     public void printBook(){
+        if (!checkedOut){
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
         System.out.println("Date Published: " + pubDate);
         System.out.println("Price: $" + price);
         System.out.println("Page Count: " + pageNum);
-        if (!checkedOut){System.out.println("Currently Available");}
-        if (checkedOut){System.out.println("Currently Checked Out");}
+        System.out.println("Unique Book ID: " + bookId);
         System.out.println("----------------------------------------");
-    }
-
-    public double calculateLateFee(LocalDate currentDate, LocalDate dueDate) {
-        if (currentDate.isAfter(dueDate)) {
-            long daysLate = dueDate.until(currentDate).getDays();
-            return LibraryMath.calculateLateFee((int) daysLate);
         }
-        return 0;
+        else {
+            System.out.println("Title is currently checked out.");
+            System.out.println("Please check again at a later date.");
+            System.out.println("----------------------------------------");
+        }
     }
 }
